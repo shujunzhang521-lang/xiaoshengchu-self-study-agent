@@ -35,6 +35,22 @@ export const subjects = [
 
 export const questionBank = [
   {
+    id: "math-writing-1",
+    subject: "math",
+    type: "choice",
+    knowledge: "数学卷面规范",
+    prompt: "做百分数、折扣类计算时，哪种写法最能减少看错和算错？",
+    options: [
+      "一个数字占一格，等号上下尽量对齐",
+      "把草稿和答案都挤在同一行",
+      "为了快一点，省略小数点和单位",
+      "想到哪里写到哪里，不需要留空",
+    ],
+    answer: "一个数字占一格，等号上下尽量对齐",
+    explanation: "六年级应用题里，数字、等号、小数点看清楚很关键。用方格和对齐可以让步骤更容易自查。",
+    coachTip: "先把卷面写清楚，很多“粗心错”会自动减少。",
+  },
+  {
     id: "math-percent-1",
     subject: "math",
     type: "choice",
@@ -154,6 +170,42 @@ export const questionBank = [
     acceptableAnswers: ["2x+3", "2*x+3", "2x + 3", "2 * x + 3"],
     explanation: "x 的 2 倍是 2x，再加 3 就是 2x + 3。",
     coachTip: "代数式就是把文字关系翻译成数学符号。",
+  },
+];
+
+export const coachCards = [
+  {
+    id: "math-handwriting",
+    title: "数学卷面 5 分钟微训练",
+    tag: "Claude 导入",
+    tone: "skill",
+    points: [
+      "每天只练 0-9、=、%、小数点，重点区分 3/5、7/9。",
+      "草稿区和正式答案分开，正式区只保留关键步骤。",
+      "做题时一个数字占一格，等号尽量排成一列。",
+    ],
+  },
+  {
+    id: "hobby-boundary",
+    title: "爱好不禁掉，但要有边界",
+    tag: "家庭规则",
+    tone: "habit",
+    points: [
+      "不要把矛头对准孩子的兴趣，核心问题是时间和优先级。",
+      "学习任务完成后，爱好时间才稳定兑现。",
+      "规则写具体：什么时候学、学到什么程度、周末可用多久。",
+    ],
+  },
+  {
+    id: "semantic-tree",
+    title: "自学先搭树干，再挂树叶",
+    tag: "学习方法",
+    tone: "method",
+    points: [
+      "先问：这个知识点最底层的概念是什么？",
+      "再做：用 2-3 道题确认主干是否站稳。",
+      "最后补：错题、技巧和细节都挂到对应主干上。",
+    ],
   },
 ];
 

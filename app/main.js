@@ -1,4 +1,4 @@
-import { buildDefaultSession, questionBank, subjects } from "./data.js";
+import { buildDefaultSession, coachCards, questionBank, subjects } from "./data.js";
 import {
   buildParentBrief,
   buildQuestionsById,
@@ -190,6 +190,10 @@ function render() {
       </div>
     </section>
 
+    <section class="coach-strip" aria-label="Claude 导入建议">
+      ${coachCards.map(renderCoachCard).join("")}
+    </section>
+
     <section class="main-grid">
       <article class="study-card" style="--subject:${currentSubject.color}">
         ${renderQuestionCard(currentSubject, currentQuestion)}
@@ -217,6 +221,20 @@ function renderStation(subject) {
       </span>
       <em>${progress.answered}/${progress.total}</em>
     </button>
+  `;
+}
+
+function renderCoachCard(card) {
+  return `
+    <article class="coach-card ${card.tone}">
+      <div class="coach-card-head">
+        <span>${escapeHtml(card.tag)}</span>
+        <strong>${escapeHtml(card.title)}</strong>
+      </div>
+      <ul>
+        ${card.points.map((point) => `<li>${escapeHtml(point)}</li>`).join("")}
+      </ul>
+    </article>
   `;
 }
 
